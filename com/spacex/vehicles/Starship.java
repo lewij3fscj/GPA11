@@ -1,6 +1,6 @@
 // Starship.java
-// D. Singletary 
-// 3/20/23
+// Jasmine Lewis 
+// 8/10/23
 // class representing SpaceX Starship
 
 package com.spacex.vehicles;
