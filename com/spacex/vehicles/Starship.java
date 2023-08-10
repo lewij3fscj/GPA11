@@ -79,13 +79,18 @@ public class Starship {
         return(Math.random() * (max - min) + min);
     }
     
-    // add an astronaut
-    public void addAstronaut(String name, 
-                double heightCm, double weightKg) {
-        LocalDateTime ldtArrival = LocalDateTime.now();
-        astronauts.add(new Astronaut(name, heightCm, weightKg, ldtArrival));
-        this.weightKg += weightKg;
-    }
+    public void addAstronaut(Astronaut astronaut) {
+    astronauts.add(astronaut);
+
+    // Calculate estimated return date
+    LocalDate estimatedReturn = astronaut.getArrival().plus(astronaut.getStayLength());
+
+    astronaut.setEstimatedReturn(estimatedReturn);
+
+    // Update vehicle weight with astronaut's weight
+    totalWeight += astronaut.getWeight();
+}
+
     
     // set the altitude
     public void setAltitude(double altitudeKm) {
