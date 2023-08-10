@@ -1,6 +1,6 @@
 // Astronaut.java
-// D. Singletary 
-// 3/20/23
+// Jasmine Lewis 
+// 8/10/23
 // class representing an astronaut
 
 package com.spacex.personnel;
