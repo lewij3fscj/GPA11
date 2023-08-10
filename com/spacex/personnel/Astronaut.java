@@ -8,6 +8,15 @@ package com.spacex.personnel;
 import java.time.LocalDateTime;
 import java.text.DecimalFormat;
 import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.Period;
+
+public class Astronaut {
+    private double height;
+    private double weight;
+    private LocalDate arrival;
+    private Period stayLength;
+    private LocalDate estimatedReturn;
 
 public class Astronaut {
     private String name;
@@ -19,19 +28,20 @@ public class Astronaut {
     public Astronaut(String name, double heightCm, double weightKg,
                      LocalDateTime arrival) {
         this.name = name;
-        this.heightCm = heightCm;
-        this.weightKg = weightKg;
-        this.arrival = arrival;
+    this.height = height;
+    this.weight = weight;
+    this.arrival = arrival;
+    this.stayLength = stayLength;
+    this.estimatedReturn = estimatedReturn;
     }
     
     @Override
-    public String toString() {
-        DecimalFormat decFormatter = new DecimalFormat(".#");
-        DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        
-        return "name: " + name + "\n" + 
-               "height: " + decFormatter.format(heightCm) + " (cm)\n" +
-               "weight: " + decFormatter.format(weightKg) + " (kg)\n" +
-               "arrival: " + dtFormatter.format(arrival) + "\n";
+public String toString() {
+    return "name: " + name + "\n"
+            + "height: " + height + " (cm)\n"
+            + "weight: " + weight + " (kg)\n"
+            + "arrival: " + arrival + "\n"
+            + "stay length: " + stayLength.getDays() + " days\n"
+            + "est. return " + estimatedReturn;
     }
 }
